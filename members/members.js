@@ -1,6 +1,6 @@
 // import services and utilities
 // import needed service methods
-import { getUser } from '../services/members-service.js';
+import { getUser, signOut } from '../services/members-service.js';
 
 let user = null;
 
@@ -17,7 +17,8 @@ async function handlePageLoad() {
 }
 
 async function handleSignOut() {
-    // *** call sign out (don't forget call is asynchronous!)
+    // call sign out (don't forget call is asynchronous!)
+    await signOut();
 }
 
 // Create each component:
