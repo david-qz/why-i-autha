@@ -1,6 +1,6 @@
 // import services and utilities
 // *** import needed service methods
-import { signIn, signUp } from './services/members-service.js';
+import { signIn, signUp, getUser } from './services/members-service.js';
 
 // import component creators
 import createAuthForm from './components/AuthForm.js';
@@ -10,9 +10,10 @@ let errorMessage = '';
 
 // write handler functions
 async function handlePageLoad() {
-    // *** get the user
-
-    // *** if there is a user, redirect (use replace) to './members'
+    // get the user
+    const user = await getUser();
+    // if there is a user, redirect (use replace) to './members'
+    if (user) location.replace('./members');
 
     display();
 }
