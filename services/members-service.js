@@ -9,11 +9,13 @@ export async function getUser() {
 }
 
 export async function signUp(email, password) {
-    // *** implement supabase sign up
+    // implement supabase sign up
+    return await client.auth.signUp({ email, password });
 }
 
 export async function signIn(email, password) {
-    // *** implement supabase sign in
+    // implement supabase sign in
+    return await client.auth.signIn({ email, password });
 }
 
 export async function signOut() {
