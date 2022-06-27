@@ -11,9 +11,11 @@ async function handlePageLoad() {
     // get the user
     user = await getUser();
     // if there is a **not** user, redirect (use replace) to '../'
-    if (!user) location.replace('../');
-
-    display();
+    if (!user) {
+        location.replace('../');
+    } else {
+        display();
+    }
 }
 
 async function handleSignOut() {
